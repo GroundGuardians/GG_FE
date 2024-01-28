@@ -1,7 +1,12 @@
+import Header from "./commons/header";
 function App() {
   //develop
   //test
-  return <div>app</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
 
 export default App;
