@@ -1,12 +1,15 @@
 import Header from "./commons/Header";
-import { WhiteButton } from "./commons/Button";
+import { CommonButton } from "./commons/Button";
 function App() {
   //develop
   //test
   return (
     <div>
       <Header />
-      <WhiteButton>I wake up on a bright sunny day</WhiteButton>
+      <CommonButton isGreen={true}>
+        I wake up on a bright sunny day
+      </CommonButton>
+      <CommonButton isGreen={false}>I wake up on a moonlit night</CommonButton>
     </div>
   );
 }

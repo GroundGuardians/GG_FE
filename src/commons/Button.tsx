@@ -1,33 +1,31 @@
-import React from "react";
+import { ReactNode } from "react";
+
 import styled from "@emotion/styled";
 
-export const WhiteButton = ({ children }) => {
-  return <WhiteButtonContainer>{children}</WhiteButtonContainer>;
+interface commonButtonPropTypes {
+  children: ReactNode;
+  isGreen: boolean;
+}
+
+export const CommonButton = (props: commonButtonPropTypes) => {
+  return (
+    <CommonButtonContainer isGreen={props.isGreen}>
+      {props.children}
+    </CommonButtonContainer>
+  );
 };
 
-export const GreenButton = ({ children }) => {
-  return <GreenButtonContainer>{children}</GreenButtonContainer>;
-};
-
-const WhiteButtonContainer = styled.button`
+const CommonButtonContainer = styled.button<{ isGreen: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 294px;
   height: 68px;
   border-radius: 20px;
-  color: #000;
-  font-weight: 400;
-  font-size: 20px;
+  color: ${({ isGreen }) => (isGreen ? "#fff" : "#000")};
+  background-color: ${({ isGreen }) => (isGreen ? "#25c35c" : "#fff")};
+  font-size: 22px;
   border: 2px solid #25c35c;
   padding: 22px 31px;
-`;
-
-const GreenButtonContainer = styled.button`
-  width: 294px;
-  height: 68px;
-  border-radius: 20px;
-  background: #25c35c;
-  color: #fff;
-  font-size: 22px;
+  cursor: pointer;
 `;
