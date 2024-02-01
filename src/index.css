@@ -42,7 +42,6 @@ button {
 
 body {
   margin: 0;
-  display: flex;
 }
 
 @media (prefers-color-scheme: light) {
