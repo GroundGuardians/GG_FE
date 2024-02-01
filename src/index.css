@@ -6,11 +6,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Black.woff")
+    format("woff");
+}
+
 :root {
   font-family: "GangwonEdu_OTFBoldA", Inter, system-ui, Avenir, Helvetica, Arial,
     sans-serif;
   line-height: 1.5;
-  font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);

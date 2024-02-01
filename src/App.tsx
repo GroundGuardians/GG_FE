@@ -1,4 +1,4 @@
-import Header from "./commons/header";
+import Header from "./commons/Header";
 function App() {
   //develop
   //test
