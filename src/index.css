@@ -14,11 +14,17 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Black.woff")
+    format("woff");
+}
+
 :root {
   font-family: "GangwonEduSaeeum", Inter, system-ui, Avenir, Helvetica, Arial,
     sans-serif;
   line-height: 1.5;
-  font-weight: 400;
 
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -37,7 +43,6 @@ button {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
 }
 
 @media (prefers-color-scheme: light) {

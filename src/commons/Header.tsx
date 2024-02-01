@@ -1,26 +1,32 @@
-import React from "react";
 import InfoIc from "../assets/info.svg";
 import styled from "@emotion/styled";
 
 const Header = () => {
   return (
-    <HeaderLayout>
+    <HeaderWrapper>
       GroundGuardians
-      <img src={InfoIc} />
-    </HeaderLayout>
+      <InfoIcon src={InfoIc} />
+    </HeaderWrapper>
   );
 };
 
 export default Header;
 
-const HeaderLayout = styled.div`
+const HeaderWrapper = styled.div`
+  font-family: "Pretendard";
+  display: flex;
+  align-items: center;
+  position: absolute;
+  justify-content: center;
   width: 100vw;
   height: 60px;
-  padding-top: 20px;
-  padding-bottom: 20px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  color: #25c35c;
   font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center; //유무에 따라 아이콘 크기 바뀜
+`;
+
+const InfoIcon = styled.img`
+  position: relative;
+  left: 30px;
+
 `;
