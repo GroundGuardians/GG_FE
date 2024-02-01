@@ -28,4 +28,5 @@ const HeaderWrapper = styled.div`
 const InfoIcon = styled.img`
   position: relative;
   left: 30px;
+
 `;
