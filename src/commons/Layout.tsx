@@ -34,7 +34,7 @@ const QuestionText = styled.div`
   margin-top: 20px;
   width: 390px;
   height: 102px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   font-size: 24px;
   text-align: center;
 `;
@@ -42,6 +42,6 @@ const QuestionText = styled.div`
 const QuestionImage = styled.img`
   width: 390px;
   height: 200px;
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   margin-bottom: 27px;
 `;
