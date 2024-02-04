@@ -1,7 +1,7 @@
 import Header from "./commons/Header";
 import Layout from "./commons/Layout";
 import styled from "@emotion/styled";
-import TestImage from "../src/assets/info.svg";
+import Question1 from "../src/assets/question1.svg";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Layout
         questionText="Q1. I woke up and I have transformed 
 into an animal."
-        questionImage={TestImage}
+        questionImage={Question1}
         buttonGreenText="I wake up on a bright sunny day."
         buttonWhiteText="I wake up on a moonlit night."
       />
