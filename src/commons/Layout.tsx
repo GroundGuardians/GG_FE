@@ -1,11 +1,18 @@
 import styled from "@emotion/styled";
 import { CommonButton } from "./Button";
 
-const Layout = () => {
+interface LayoutPropTypes {
+  questionText: string;
+  imageText: string;
+  commonButtonGreen: string;
+  commonButtonWhite: string;
+}
+
+const Layout = (props: LayoutPropTypes) => {
   return (
     <LayoutWrapper>
-      <QuestionText>질문</QuestionText>
-      <QuestionImage>이미지</QuestionImage>
+      <QuestionText>{props.questionText}</QuestionText>
+      <QuestionImage>{props.imageText}</QuestionImage>
       <CommonButton isGreen={true}>
         I wake up on a bright sunny day.
       </CommonButton>
