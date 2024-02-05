@@ -19,7 +19,7 @@ const router = createBrowserRouter([
         element: <MyPage />,
       },
       {
-        path: "/survey",
+        path: "/survey/:surveyId",
         element: <Survey />,
       },
       {
