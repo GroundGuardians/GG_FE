@@ -3,6 +3,7 @@ import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { DotButton } from "./embladot";
 import imageByIndex from "./imageByIndex";
+import { CAROUSEL_DATA } from "./DATA";
 
 type PropType = {
   slides: number[];
@@ -49,12 +50,13 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 <div className="embla__slide__number">
                   <span>{index + 1}</span>
                 </div>
-                <img
+                {/* <img
                   className="embla__slide__img"
                   src={imageByIndex(index)}
                   alt="Your alt text"
-                />
-                아아아ㅏ
+                /> */}
+                <h2>{CAROUSEL_DATA[index].title}</h2>
+                <p>{CAROUSEL_DATA[index].description}</p>
               </div>
             ))}
           </div>
