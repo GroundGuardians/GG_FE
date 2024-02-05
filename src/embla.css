@@ -70,7 +70,7 @@
 }
 .embla__dots {
   z-index: 1;
-  bottom: 1.6rem;
+  bottom: 30px;
   position: absolute;
   left: 0;
   right: 0;

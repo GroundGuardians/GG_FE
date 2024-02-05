@@ -49,23 +49,22 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 <CarouselLayout>
                   <Title>{CAROUSEL_DATA[index].title}</Title>
                   <Description>{CAROUSEL_DATA[index].description}</Description>
+                  <div className="embla__dots">
+                    {scrollSnaps.map((_, index) => (
+                      <DotButton
+                        key={index}
+                        onClick={() => scrollTo(index)}
+                        className={"embla__dot".concat(
+                          index === selectedIndex ? " embla__dot--selected" : ""
+                        )}
+                      />
+                    ))}
+                  </div>
                 </CarouselLayout>
               </div>
             ))}
           </div>
         </div>
-      </div>
-
-      <div className="embla__dots">
-        {scrollSnaps.map((_, index) => (
-          <DotButton
-            key={index}
-            onClick={() => scrollTo(index)}
-            className={"embla__dot".concat(
-              index === selectedIndex ? " embla__dot--selected" : ""
-            )}
-          />
-        ))}
       </div>
     </>
   );
@@ -96,4 +95,7 @@ const Title = styled.div`
 
 const Description = styled.div`
   font-size: 16px;
+  height: 360px;
+  overflow-y: scroll;
+  line-height: normal;
 `;
