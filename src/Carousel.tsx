@@ -54,6 +54,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   src={imageByIndex(index)}
                   alt="Your alt text"
                 />
+                아아아ㅏ
               </div>
             ))}
           </div>
