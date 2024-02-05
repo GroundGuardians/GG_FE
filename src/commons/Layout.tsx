@@ -29,11 +29,12 @@ const LayoutWrapper = styled.div`
 
 const QuestionText = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  justify-content: center;
   width: 390px;
   height: 102px;
+  margin-top: 20px;
+
   /* border: 1px solid black; */
   font-size: 24px;
   text-align: center;
@@ -42,6 +43,7 @@ const QuestionText = styled.div`
 const QuestionImage = styled.img`
   width: 390px;
   height: 200px;
+
   /* border: 1px solid yellow; */
   margin-bottom: 27px;
 `;
