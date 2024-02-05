@@ -2,6 +2,7 @@ import Header from "./commons/Header";
 import Layout from "./commons/Layout";
 import styled from "@emotion/styled";
 import Question1 from "../src/assets/question1.svg";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ into an animal."
         buttonGreenText="I wake up on a bright sunny day."
         buttonWhiteText="I wake up on a moonlit night."
       />
+      <Outlet />
     </Wrapper>
   );
 }
