@@ -16,7 +16,7 @@ const HeaderWrapper = styled.div`
   font-family: "Pretendard";
   display: flex;
   align-items: center;
-  position: absolute;
+  position: relative;
   justify-content: center;
   width: 100vw;
   height: 60px;
@@ -26,7 +26,6 @@ const HeaderWrapper = styled.div`
 `;
 
 const InfoIcon = styled.img`
-  position: relative;
-  left: 30px;
-
+  right: 30px;
+  position: absolute;
 `;

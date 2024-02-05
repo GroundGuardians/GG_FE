@@ -28,4 +28,5 @@ const CommonButtonContainer = styled.button<{ isGreen: boolean }>`
   border: 2px solid #25c35c;
   padding: 22px 31px;
   cursor: pointer;
+  margin-bottom: 20px;
 `;
