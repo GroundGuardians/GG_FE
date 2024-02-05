@@ -2,8 +2,8 @@ import React, { useState, useEffect, useCallback } from "react";
 import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { DotButton } from "./embladot";
-import imageByIndex from "./imageByIndex";
 import { CAROUSEL_DATA } from "./DATA";
+import styled from "@emotion/styled";
 
 type PropType = {
   slides: number[];
@@ -32,7 +32,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   useEffect(() => {
     if (!emblaApi) return;
-
     onInit(emblaApi);
     onSelect(emblaApi);
     emblaApi.on("reInit", onInit);
@@ -47,16 +46,10 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           <div className="embla__container">
             {slides.map((index) => (
               <div className="embla__slide" key={index}>
-                <div className="embla__slide__number">
-                  <span>{index + 1}</span>
-                </div>
-                {/* <img
-                  className="embla__slide__img"
-                  src={imageByIndex(index)}
-                  alt="Your alt text"
-                /> */}
-                <h2>{CAROUSEL_DATA[index].title}</h2>
-                <p>{CAROUSEL_DATA[index].description}</p>
+                <CarouselLayout>
+                  <Title>{CAROUSEL_DATA[index].title}</Title>
+                  <Description>{CAROUSEL_DATA[index].description}</Description>
+                </CarouselLayout>
               </div>
             ))}
           </div>
@@ -79,3 +72,28 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 };
 
 export default EmblaCarousel;
+
+const CarouselLayout = styled.div`
+  width: 350px;
+  height: 480px;
+  border-radius: 25px;
+  background: #fff;
+  border: 1px solid black;
+  padding-left: 26px;
+  padding-right: 26px;
+  box-sizing: border-box;
+`;
+
+const Title = styled.div`
+  color: #000;
+
+  -webkit-text-stroke-width: 0.5pt;
+  -webkit-text-stroke-color: #000;
+  font-size: 20px;
+  margin-top: 35px;
+  height: 34px;
+`;
+
+const Description = styled.div`
+  font-size: 16px;
+`;
