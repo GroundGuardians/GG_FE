@@ -13,7 +13,7 @@ export const QUIZ_DATA = {
 export const SURVEY_DATA = [
   {
     id: 1,
-    question: "Q1. I woke up and I have transformed into an animal.",
+    question: "I woke up and I have transformed into an animal.",
     image: Q1Image,
     button1: "I wake up on a bright sunny day.",
     button2: "I wake up on a moonlit night.",
@@ -21,21 +21,21 @@ export const SURVEY_DATA = [
   {
     id: 2,
     question:
-      "Q2. You just woke up and You're about to have a meal. What's on your menu?",
+      "You just woke up and You're about to have a meal. What's on your menu?",
     image: Q2Image,
-    button1: "fresh vegetbale",
+    button1: "fresh vegetable",
     button2: "Juicy meat flowing wih flavor.",
   },
   {
     id: 3,
-    question: "Q3. I woke up and I have transformed into an animal.",
+    question: "I woke up and I have transformed into an animal.",
     image: Q3Image,
     button1: "alone",
     button2: "with friends",
   },
   {
     id: 4,
-    question: "Q4.  Are you on the faster side when it comes to running?",
+    question: "Are you on the faster side when it comes to running?",
     image: Q4Image,
     button1: "Sure!",
     button2: "No, I'm slow",
