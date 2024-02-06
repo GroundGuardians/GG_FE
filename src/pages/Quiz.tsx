@@ -1,11 +1,13 @@
 import styled from "@emotion/styled";
 import { CommonButton } from "../commons/Button";
 import HintIcon from "../assets/hintIcon.svg";
+import { QUIZ_DATA } from "../constants/data";
+import { Link } from "react-router-dom";
 const Quiz = () => {
   return (
     <>
       <Title>pop quiz!</Title>
-      <QuizQuestion>something</QuizQuestion>
+      <QuizQuestion>{QUIZ_DATA.question}</QuizQuestion>
       <QuizAnswerWrapper>
         <QuizAnswerMark>A.</QuizAnswerMark>
         <QuizAnswerInputBorder>
@@ -16,9 +18,11 @@ const Quiz = () => {
         </QuizAnswerInputBorder>
       </QuizAnswerWrapper>
       <ButtonWrapper>
-        <CommonButton isGreen={true} isSurvey={false}>
-          <img src={HintIcon} /> Hint
-        </CommonButton>
+        <Link to={QUIZ_DATA.url} style={{ textDecoration: "none" }}>
+          <CommonButton isGreen={true} isSurvey={false}>
+            <img src={HintIcon} /> Hint
+          </CommonButton>
+        </Link>
         <CommonButton isGreen={false} isSurvey={false}>
           Submit
         </CommonButton>
@@ -44,6 +48,7 @@ const QuizQuestion = styled.div`
   width: 392px;
   height: 239px;
   margin-top: 20px;
+  padding: 29px 40px;
 
   background: #eaf7ef;
 `;

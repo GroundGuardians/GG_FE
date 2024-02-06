@@ -10,5 +10,12 @@ export const reset = css`
     -webkit-font-smoothing: antialiased;
 
     /* font-smoothing: antialiased; 에러뜸 */
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      cursor: pointer;
+    }
   }
 `;
