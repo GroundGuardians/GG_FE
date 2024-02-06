@@ -1,8 +1,10 @@
 import styled from "@emotion/styled";
 import CardIc from "../assets/unknownCard.svg";
 import { CommonButton, ButtonRowWrapper } from "../commons/Button";
+import { useNavigate } from "react-router-dom";
 
 const UnknownCard = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Title>
@@ -15,10 +17,18 @@ const UnknownCard = () => {
         <AnimalNameText>Pouch Voyager</AnimalNameText>
       </UnknownCardWrapper>
       <ButtonRowWrapper>
-        <CommonButton isGreen={false} isSurvey={false}>
+        <CommonButton
+          isGreen={false}
+          isSurvey={false}
+          onClick={() => navigate("../")}
+        >
           Home
         </CommonButton>
-        <CommonButton isGreen={true} isSurvey={false}>
+        <CommonButton
+          isGreen={true}
+          isSurvey={false}
+          onClick={() => navigate("../quiz")}
+        >
           Get a Card
         </CommonButton>
       </ButtonRowWrapper>
