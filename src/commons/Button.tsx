@@ -23,10 +23,11 @@ const CommonButtonContainer = styled.button<{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 294px;
-  height: 68px;
+  width: ${({ isSurvey }) => (isSurvey ? "294px" : "auto")};
+  height: ${({ isSurvey }) => (isSurvey ? "68px" : "auto")};
   margin-bottom: 20px;
-  padding: 22px 31px;
+
+  /* padding: 22px 31px; */
 
   color: ${({ isGreen }) => (isGreen ? "#fff" : "#000")};
   font-size: 22px;
