@@ -47,8 +47,6 @@ const QuizAnswerWrapper = styled.div`
   margin-top: 20px;
 
   text-align: center;
-
-  border: 1px solid yellow;
 `;
 
 const QuizAnswerMark = styled.div`
@@ -74,6 +72,10 @@ const QuizAnswerInput = styled.input`
     color: #898989;
     font-size: 24px;
     font-family: GangwonEduSaeeum;
+  }
+
+  :focus {
+    outline: none;
   }
 `;
 
