@@ -7,8 +7,6 @@ import "./embla.css";
 const SLIDES = Array.from(Array(3).keys());
 const OPTIONS: EmblaOptionsType = {};
 
-
-import styled from "@emotion/styled";
 import { Outlet } from "react-router-dom";
 import { Global } from "@emotion/react";
 import { reset } from "./reset";
