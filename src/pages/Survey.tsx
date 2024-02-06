@@ -10,15 +10,16 @@ const Survey = () => {
   if (!survey) {
     return <div>Survey not found!</div>;
   }
+
+  const { id, question, image, button1, button2 } = survey;
+
   return (
-    <div>
-      <Layout
-        questionText={`Q${survey.id}.${survey.question}`}
-        questionImage={survey.image}
-        buttonGreenText={survey.button1}
-        buttonWhiteText={survey.button2}
-      />
-    </div>
+    <Layout
+      questionText={`Q${id}.${question}`}
+      questionImage={image}
+      buttonGreenText={button1}
+      buttonWhiteText={button2}
+    />
   );
 };
 
