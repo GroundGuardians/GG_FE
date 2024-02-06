@@ -20,14 +20,14 @@ const UnknownCard = () => {
         <CommonButton
           isGreen={false}
           isSurvey={false}
-          onClick={() => navigate("../")}
+          onClick={() => navigate("/")}
         >
           Home
         </CommonButton>
         <CommonButton
           isGreen={true}
           isSurvey={false}
-          onClick={() => navigate("../quiz")}
+          onClick={() => navigate("/quiz")}
         >
           Get a Card
         </CommonButton>
