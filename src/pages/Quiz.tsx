@@ -13,6 +13,10 @@ const Quiz = () => {
     setAnswer(event.target.value);
   };
 
+  const handleCompareAnswer = () => {
+    answer == QUIZ_DATA.answer ? console.log("correct") : console.log("false");
+  };
+
   return (
     <>
       <Title>pop quiz!</Title>
@@ -37,7 +41,11 @@ const Quiz = () => {
           <img src={HintIcon} /> Hint
         </CommonButton>
 
-        <CommonButton isGreen={false} isSurvey={false} onClick={}>
+        <CommonButton
+          isGreen={false}
+          isSurvey={false}
+          onClick={() => console.log("hi")}
+        >
           Submit
         </CommonButton>
       </ButtonWrapper>

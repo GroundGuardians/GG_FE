@@ -11,7 +11,11 @@ interface commonButtonPropTypes {
 
 export const CommonButton = (props: commonButtonPropTypes) => {
   return (
-    <CommonButtonContainer isGreen={props.isGreen} isSurvey={props.isSurvey}>
+    <CommonButtonContainer
+      isGreen={props.isGreen}
+      isSurvey={props.isSurvey}
+      onClick={props.onClick}
+    >
       {props.children}
     </CommonButtonContainer>
   );
