@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 
 const Survey = () => {
   const { surveyId } = useParams();
-  const survey = SURVEY_DATA.find((item) => item.id === parseInt(surveyId));
+  const parsedSurveyId = surveyId ? parseInt(surveyId) : undefined;
+  const survey = SURVEY_DATA.find((item) => item.id === parsedSurveyId);
 
   if (!survey) {
     return <div>Survey not found!</div>;
