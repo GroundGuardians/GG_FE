@@ -8,13 +8,13 @@ function App() {
   return (
     <Wrapper>
       <Header />
-      <Layout
+      {/* <Layout
         questionText="Q1. I woke up and I have transformed 
 into an animal."
         questionImage={Question1}
         buttonGreenText="I wake up on a bright sunny day."
         buttonWhiteText="I wake up on a moonlit night."
-      />
+      /> */}
       <Outlet />
     </Wrapper>
   );
