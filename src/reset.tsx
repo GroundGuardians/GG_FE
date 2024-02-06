@@ -15,7 +15,6 @@ export const reset = css`
   a {
     color: inherit;
     text-decoration: none;
-    text-decoration-line: none;
 
     cursor: pointer;
   }

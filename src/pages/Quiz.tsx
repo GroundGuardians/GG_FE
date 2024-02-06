@@ -3,18 +3,19 @@ import { CommonButton } from "../commons/Button";
 import HintIcon from "../assets/hintIcon.svg";
 import { QUIZ_DATA } from "../constants/data";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 const Quiz = () => {
   const [answer, setAnswer] = useState("");
-
-  const navigate = useNavigate();
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState(true);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAnswer(event.target.value);
+    setIsAnswerCorrect(true);
   };
 
   const handleCompareAnswer = () => {
-    answer == QUIZ_DATA.answer ? console.log("correct") : console.log("false");
+    answer == QUIZ_DATA.answer
+      ? setIsAnswerCorrect(true)
+      : setIsAnswerCorrect(false);
   };
 
   return (
@@ -31,6 +32,9 @@ const Quiz = () => {
             onChange={handleInputChange}
           />
         </QuizAnswerInputBorder>
+        <AnswerFalseMessage isVisible={!isAnswerCorrect}>
+          * The answer is incorrect! Try again
+        </AnswerFalseMessage>
       </QuizAnswerWrapper>
       <ButtonWrapper>
         <CommonButton isGreen={true} isSurvey={false}>
@@ -42,7 +46,7 @@ const Quiz = () => {
         <CommonButton
           isGreen={false}
           isSurvey={false}
-          onClick={() => console.log("hi")}
+          onClick={handleCompareAnswer}
         >
           Submit
         </CommonButton>
@@ -74,6 +78,7 @@ const QuizQuestion = styled.div`
 `;
 
 const QuizAnswerWrapper = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -126,4 +131,14 @@ const ButtonWrapper = styled.div`
   margin-top: 29px;
 
   /* 임의로 잡은 값 */
+`;
+
+const AnswerFalseMessage = styled.div<{ isVisible: boolean }>`
+  position: absolute;
+  bottom: -16px;
+  left: 32px;
+  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+
+  color: #ff6060;
+  font-size: 16px;
 `;
