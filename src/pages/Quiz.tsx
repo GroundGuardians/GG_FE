@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { CommonButton } from "../commons/Button";
+import HintIcon from "../assets/hintIcon.svg";
 const Quiz = () => {
   return (
     <>
@@ -16,7 +17,7 @@ const Quiz = () => {
       </QuizAnswerWrapper>
       <ButtonWrapper>
         <CommonButton isGreen={true} isSurvey={false}>
-          Hint
+          <img src={HintIcon} /> Hint
         </CommonButton>
         <CommonButton isGreen={false} isSurvey={false}>
           Submit
@@ -95,7 +96,9 @@ const QuizAnswerInputBorder = styled.div`
 `;
 
 const ButtonWrapper = styled.div`
-  width: 180px;
+  display: flex;
+  gap: 20px;
+  margin-top: 29px;
 
   /* 임의로 잡은 값 */
 `;

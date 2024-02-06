@@ -26,10 +26,9 @@ const CommonButtonContainer = styled.button<{
   width: ${({ isSurvey }) => (isSurvey ? "294px" : "auto")};
   height: ${({ isSurvey }) => (isSurvey ? "68px" : "auto")};
   margin-bottom: 20px;
+  padding: 10px 15px;
 
-  /* padding: 22px 31px; */
-
-  color: ${({ isGreen }) => (isGreen ? "#fff" : "##25C35C")};
+  color: ${({ isGreen }) => (isGreen ? "#fff" : "#25c35c")};
   font-size: 22px;
 
   background-color: ${({ isGreen }) => (isGreen ? "#25c35c" : "#fff")};
