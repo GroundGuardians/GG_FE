@@ -13,8 +13,12 @@ const Layout = (props: LayoutPropTypes) => {
     <LayoutWrapper>
       <QuestionText>{props.questionText}</QuestionText>
       <QuestionImage src={props.questionImage} />
-      <CommonButton isGreen={true}>{props.buttonGreenText}</CommonButton>
-      <CommonButton isGreen={false}>{props.buttonWhiteText}</CommonButton>
+      <CommonButton isGreen={true} isSurvey={true}>
+        {props.buttonGreenText}
+      </CommonButton>
+      <CommonButton isGreen={false} isSurvey={true}>
+        {props.buttonWhiteText}
+      </CommonButton>
     </LayoutWrapper>
   );
 };
