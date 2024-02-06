@@ -2,8 +2,17 @@ import styled from "@emotion/styled";
 import { CommonButton } from "../commons/Button";
 import HintIcon from "../assets/hintIcon.svg";
 import { QUIZ_DATA } from "../constants/data";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const Quiz = () => {
+  const [answer, setAnswer] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setAnswer(event.target.value);
+  };
+
   return (
     <>
       <Title>pop quiz!</Title>
@@ -14,16 +23,21 @@ const Quiz = () => {
           <QuizAnswerInput
             type="text"
             placeholder="Please enter your answer"
-          ></QuizAnswerInput>
+            value={answer}
+            onChange={handleInputChange}
+          />
         </QuizAnswerInputBorder>
       </QuizAnswerWrapper>
       <ButtonWrapper>
-        <Link to={QUIZ_DATA.url} style={{ textDecoration: "none" }}>
-          <CommonButton isGreen={true} isSurvey={false}>
-            <img src={HintIcon} /> Hint
-          </CommonButton>
-        </Link>
-        <CommonButton isGreen={false} isSurvey={false}>
+        <CommonButton
+          isGreen={true}
+          isSurvey={false}
+          onClick={() => navigate(QUIZ_DATA.url)}
+        >
+          <img src={HintIcon} /> Hint
+        </CommonButton>
+
+        <CommonButton isGreen={false} isSurvey={false} onClick={}>
           Submit
         </CommonButton>
       </ButtonWrapper>
