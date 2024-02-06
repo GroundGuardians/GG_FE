@@ -1,12 +1,13 @@
 import Header from "./commons/Header";
-import Layout from "./commons/Layout";
-import styled from "@emotion/styled";
-import Question1 from "../src/assets/question1.svg";
-import { Outlet } from "react-router-dom";
 
+import styled from "@emotion/styled";
+import { Outlet } from "react-router-dom";
+import { Global } from "@emotion/react";
+import { reset } from "./reset";
 function App() {
   return (
     <Wrapper>
+      <Global styles={reset} />
       <Header />
       {/* <Layout
         questionText="Q1. I woke up and I have transformed 
