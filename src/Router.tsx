@@ -5,6 +5,7 @@ import Quiz from "./pages/Quiz";
 import Survey from "./pages/Survey";
 import App from "./App";
 import UnknownCard from "./pages/UnknownCard";
+import Info from "./pages/Info";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/card/unknown",
         element: <UnknownCard />,
+      },
+      {
+        path: "/info",
+        element: <Info />,
       },
     ],
   },
