@@ -29,7 +29,7 @@ const CommonButtonContainer = styled.button<{
 
   /* padding: 22px 31px; */
 
-  color: ${({ isGreen }) => (isGreen ? "#fff" : "#000")};
+  color: ${({ isGreen }) => (isGreen ? "#fff" : "##25C35C")};
   font-size: 22px;
 
   background-color: ${({ isGreen }) => (isGreen ? "#25c35c" : "#fff")};

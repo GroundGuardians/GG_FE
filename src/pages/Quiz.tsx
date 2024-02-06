@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { CommonButton } from "../commons/Button";
 const Quiz = () => {
   return (
     <>
@@ -14,8 +15,12 @@ const Quiz = () => {
         </QuizAnswerInputBorder>
       </QuizAnswerWrapper>
       <ButtonWrapper>
-        <GreenButton>Hint</GreenButton>
-        <WhiteButton>Submit</WhiteButton>
+        <CommonButton isGreen={true} isSurvey={false}>
+          Hint
+        </CommonButton>
+        <CommonButton isGreen={false} isSurvey={false}>
+          Submit
+        </CommonButton>
       </ButtonWrapper>
     </>
   );
