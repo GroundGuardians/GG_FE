@@ -42,8 +42,7 @@ const CommonButtonContainer = styled.button<{
   border-radius: 20px;
 `;
 
-export const ButtonColumnWrapper = styled.div`
+export const ButtonRowWrapper = styled.div`
   display: flex;
-  flex-direction: column;
   gap: 20px;
 `;
