@@ -13,6 +13,10 @@ const Quiz = () => {
           ></QuizAnswerInput>
         </QuizAnswerInputBorder>
       </QuizAnswerWrapper>
+      <ButtonWrapper>
+        <GreenButton>Hint</GreenButton>
+        <WhiteButton>Submit</WhiteButton>
+      </ButtonWrapper>
     </>
   );
 };
@@ -83,4 +87,10 @@ const QuizAnswerInputBorder = styled.div`
   height: 37px;
 
   border-bottom: 2px solid #c9c9c9;
+`;
+
+const ButtonWrapper = styled.div`
+  width: 180px;
+
+  /* 임의로 잡은 값 */
 `;
