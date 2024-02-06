@@ -5,17 +5,21 @@ import styled from "@emotion/styled";
 interface commonButtonPropTypes {
   children: ReactNode;
   isGreen: boolean;
+  isSurvey: boolean;
 }
 
 export const CommonButton = (props: commonButtonPropTypes) => {
   return (
-    <CommonButtonContainer isGreen={props.isGreen}>
+    <CommonButtonContainer isGreen={props.isGreen} isSurvey={props.isSurvey}>
       {props.children}
     </CommonButtonContainer>
   );
 };
 
-const CommonButtonContainer = styled.button<{ isGreen: boolean }>`
+const CommonButtonContainer = styled.button<{
+  isGreen: boolean;
+  isSurvey: boolean;
+}>`
   display: flex;
   align-items: center;
   justify-content: center;
