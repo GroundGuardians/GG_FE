@@ -6,7 +6,7 @@ interface commonButtonPropTypes {
   children: ReactNode;
   isGreen: boolean;
   isSurvey: boolean;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export const CommonButton = (props: commonButtonPropTypes) => {

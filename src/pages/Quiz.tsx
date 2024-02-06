@@ -33,12 +33,10 @@ const Quiz = () => {
         </QuizAnswerInputBorder>
       </QuizAnswerWrapper>
       <ButtonWrapper>
-        <CommonButton
-          isGreen={true}
-          isSurvey={false}
-          onClick={() => navigate(QUIZ_DATA.url)}
-        >
-          <img src={HintIcon} /> Hint
+        <CommonButton isGreen={true} isSurvey={false}>
+          <a href={QUIZ_DATA.url}>
+            <img src={HintIcon} /> Hint
+          </a>
         </CommonButton>
 
         <CommonButton
