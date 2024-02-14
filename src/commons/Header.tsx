@@ -1,12 +1,19 @@
 import InfoIc from "../assets/info.svg";
 import styled from "@emotion/styled";
+import { useState } from "react";
+import Info from "../pages/Info";
 
 const Header = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
-    <HeaderWrapper>
-      GroundGuardians
-      <InfoIcon src={InfoIc} />
-    </HeaderWrapper>
+    <>
+      <HeaderWrapper>
+        GroundGuardians
+        <InfoIcon src={InfoIc} onClick={() => setModalOpen(!modalOpen)} />
+      </HeaderWrapper>
+      <ModalWrapper>{modalOpen && <Info />}</ModalWrapper>
+    </>
   );
 };
 
@@ -30,4 +37,11 @@ const HeaderWrapper = styled.div`
 const InfoIcon = styled.img`
   position: absolute;
   right: 30px;
+`;
+
+const ModalWrapper = styled.div`
+  position: absolute;
+  top: 50px;
+
+  /* 임의로 */
 `;
