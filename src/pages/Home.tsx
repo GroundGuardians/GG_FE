@@ -3,6 +3,9 @@ import HomeImg from "../assets/home.svg";
 import GoogleLogin from "../assets/GoogleLogin.svg";
 import axios from "axios";
 import { CommonButton } from "../commons/Button";
+import FindAnimalIc from "../assets/findAnimalIc.svg";
+import MyPageIc from "../assets/myPageIc.svg";
+import { useNavigate } from "react-router-dom";
 
 const fetchData = async () => {
   try {
@@ -17,6 +20,7 @@ const fetchData = async () => {
 };
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Title>
@@ -27,11 +31,19 @@ const Home = () => {
       {localStorage.getItem("accessToken") &&
       localStorage.getItem("jwtToken") ? (
         <Wrapper>
-          <CommonButton isGreen={true} isSurvey={false}>
-            Find my animal
+          <CommonButton
+            isGreen={true}
+            isSurvey={false}
+            onClick={() => navigate("/survey/1")}
+          >
+            <img src={FindAnimalIc} /> Find my animal
           </CommonButton>
-          <CommonButton isGreen={false} isSurvey={false}>
-            Go to Mypage
+          <CommonButton
+            isGreen={false}
+            isSurvey={false}
+            onClick={() => navigate("/mypage")}
+          >
+            <img src={MyPageIc} /> Go to Mypage
           </CommonButton>
         </Wrapper>
       ) : (
