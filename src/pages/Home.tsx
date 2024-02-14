@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import HomeImg from "../assets/home.svg";
 import GoogleLogin from "../assets/GoogleLogin.svg";
 import axios from "axios";
+import { CommonButton } from "../commons/Button";
 
 const fetchData = async () => {
   try {
@@ -23,7 +24,19 @@ const Home = () => {
         <br /> into an animal?"
       </Title>
       <img src={HomeImg} />
-      <GoogleLoginIcon src={GoogleLogin} onClick={fetchData} />
+      {localStorage.getItem("accessToken") &&
+      localStorage.getItem("jwtToken") ? (
+        <Wrapper>
+          <CommonButton isGreen={true} isSurvey={false}>
+            Find my animal
+          </CommonButton>
+          <CommonButton isGreen={false} isSurvey={false}>
+            Go to Mypage
+          </CommonButton>
+        </Wrapper>
+      ) : (
+        <GoogleLoginIcon src={GoogleLogin} onClick={fetchData} />
+      )}
     </>
   );
 };
@@ -48,4 +61,8 @@ const GoogleLoginIcon = styled.img`
   margin-top: 39px;
 
   cursor: pointer;
+`;
+
+const Wrapper = styled.div`
+  margin-top: 30px;
 `;
