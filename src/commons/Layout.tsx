@@ -7,10 +7,22 @@ interface LayoutPropTypes {
   questionImage: string;
   buttonGreenText: string;
   buttonWhiteText: string;
+  id: number | undefined;
+  parsedSurveyId1: number | undefined;
+  setParsedSurveyId1: React.Dispatch<React.SetStateAction<number | undefined>>;
 }
 
 const Layout = (props: LayoutPropTypes) => {
   const { surveyResult, setSurveyResult } = useOutletContext();
+  const {
+    questionText,
+    questionImage,
+    buttonGreenText,
+    buttonWhiteText,
+    id,
+    parsedSurveyId1,
+    setParsedSurveyId1,
+  } = props;
 
   const handleAddSurveyResultO = () => {
     setSurveyResult([...surveyResult, "O"]);
@@ -22,21 +34,21 @@ const Layout = (props: LayoutPropTypes) => {
   };
   return (
     <LayoutWrapper>
-      <QuestionText>{props.questionText}</QuestionText>
-      <QuestionImage src={props.questionImage} />
+      <QuestionText>{questionText}</QuestionText>
+      <QuestionImage src={questionImage} />
       <CommonButton
         isGreen={true}
         isSurvey={true}
         onClick={handleAddSurveyResultO}
       >
-        {props.buttonGreenText}
+        {buttonGreenText}
       </CommonButton>
       <CommonButton
         isGreen={false}
         isSurvey={true}
         onClick={handleAddSurveyResultX}
       >
-        {props.buttonWhiteText}
+        {buttonWhiteText}
       </CommonButton>
     </LayoutWrapper>
   );
