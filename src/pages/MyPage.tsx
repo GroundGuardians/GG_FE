@@ -1,7 +1,14 @@
 import styled from "@emotion/styled";
-import CardIc from "../assets/unknownCard.svg";
 import { CommonButton, ButtonRowWrapper } from "../commons/Button";
 import { useNavigate } from "react-router-dom";
+import MyPageCarousel from "./mypageCarousel/mypageCarousel";
+
+import "./mypageCarousel/embla.css";
+import "./mypageCarousel/sandbox.css";
+
+const OPTIONS: EmblaOptionsType = { loop: true };
+const SLIDE_COUNT = 5;
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 const MyPage = () => {
   const navigate = useNavigate();
@@ -9,10 +16,11 @@ const MyPage = () => {
     <>
       <Username>Hello! Eunbi Hwang</Username>
       <Email>pintotoro123@ajou.ac.kr</Email>
-      <UnknownCardWrapper>
-        <img src={CardIc} />
-        <AnimalNameText>Pouch Voyager</AnimalNameText>
-      </UnknownCardWrapper>
+      <main className="sandbox">
+        <section className="sandbox__carousel mypage">
+          <MyPageCarousel slides={SLIDES} options={OPTIONS} />
+        </section>
+      </main>
       <ButtonRowWrapper>
         <CommonButton
           isGreen={false}
