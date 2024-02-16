@@ -10,8 +10,9 @@
   display: flex;
   touch-action: pan-y;
   align-items: center;
-  justify-contnet: center;
-  margin: 0 auto; //왜 됐는지 의문..
+  justify-content: center;
+  margin: 0 auto;
+  /* 왜 됐는지 의문.. */
 }
 .mypage .embla__slide {
   flex: 0 0 var(--slide-size);

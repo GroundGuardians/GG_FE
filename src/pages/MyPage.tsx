@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { CommonButton, ButtonRowWrapper } from "../commons/Button";
 import { useNavigate } from "react-router-dom";
 import MyPageCarousel from "./mypageCarousel/mypageCarousel";
+import { EmblaOptionsType } from "embla-carousel";
 
 import "./mypageCarousel/embla.css";
 import "./mypageCarousel/sandbox.css";
@@ -55,22 +56,4 @@ const Email = styled.div`
   margin-bottom: 12px;
 
   font-size: 16px;
-`;
-const UnknownCardWrapper = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 290px;
-  height: 434px;
-  margin-bottom: 28px;
-`;
-
-const AnimalNameText = styled.p`
-  position: absolute;
-  bottom: 160px;
-
-  color: #898989;
-  font-size: 24px;
-  -webkit-text-stroke-width: 0.5pt;
-  -webkit-text-stroke-color: #898989;
 `;
