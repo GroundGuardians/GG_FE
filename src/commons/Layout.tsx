@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { CommonButton } from "./Button";
+import { useOutletContext } from "react-router-dom";
 
 interface LayoutPropTypes {
   questionText: string;
@@ -9,14 +10,32 @@ interface LayoutPropTypes {
 }
 
 const Layout = (props: LayoutPropTypes) => {
+  const { surveyResult, setSurveyResult } = useOutletContext();
+
+  const handleAddSurveyResultO = () => {
+    setSurveyResult([...surveyResult, "O"]);
+    console.log(surveyResult, "d");
+  };
+  const handleAddSurveyResultX = () => {
+    setSurveyResult([...surveyResult, "X"]);
+    console.log(surveyResult, "x");
+  };
   return (
     <LayoutWrapper>
       <QuestionText>{props.questionText}</QuestionText>
       <QuestionImage src={props.questionImage} />
-      <CommonButton isGreen={true} isSurvey={true}>
+      <CommonButton
+        isGreen={true}
+        isSurvey={true}
+        onClick={handleAddSurveyResultO}
+      >
         {props.buttonGreenText}
       </CommonButton>
-      <CommonButton isGreen={false} isSurvey={true}>
+      <CommonButton
+        isGreen={false}
+        isSurvey={true}
+        onClick={handleAddSurveyResultX}
+      >
         {props.buttonWhiteText}
       </CommonButton>
     </LayoutWrapper>

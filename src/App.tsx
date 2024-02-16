@@ -4,20 +4,15 @@ import styled from "@emotion/styled";
 import { Outlet } from "react-router-dom";
 import { Global } from "@emotion/react";
 import { reset } from "./reset";
+import { useState } from "react";
 
 function App() {
+  const [surveyResult, setSurveyResult] = useState([]);
   return (
     <Wrapper>
       <Global styles={reset} />
       <Header />
-      {/* <Layout
-        questionText="Q1. I woke up and I have transformed 
-into an animal."
-        questionImage={Question1}
-        buttonGreenText="I wake up on a bright sunny day."
-        buttonWhiteText="I wake up on a moonlit night."
-      /> */}
-      <Outlet />
+      <Outlet context={{ surveyResult, setSurveyResult }} />
     </Wrapper>
   );
 }
