@@ -27,7 +27,7 @@ const Layout = (props: LayoutPropTypes) => {
   } = props;
 
   const handleAddSurveyResultO = () => {
-    setSurveyResult([...surveyResult, "O"]);
+    setSurveyResult(surveyResult + "O");
     console.log(surveyResult, "d");
 
     if (parsedSurveyId1 !== undefined) {
@@ -38,7 +38,7 @@ const Layout = (props: LayoutPropTypes) => {
     }
   };
   const handleAddSurveyResultX = () => {
-    setSurveyResult([...surveyResult, "X"]);
+    setSurveyResult(surveyResult + "X");
     console.log(surveyResult, "x");
 
     if (parsedSurveyId1 !== undefined) {

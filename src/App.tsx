@@ -7,7 +7,7 @@ import { reset } from "./reset";
 import { useState } from "react";
 
 function App() {
-  const [surveyResult, setSurveyResult] = useState([]);
+  const [surveyResult, setSurveyResult] = useState("");
   return (
     <Wrapper>
       <Global styles={reset} />
