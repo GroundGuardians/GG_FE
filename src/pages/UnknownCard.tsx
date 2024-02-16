@@ -43,21 +43,23 @@ const Title = styled.div`
   margin-bottom: 29px;
   -webkit-text-stroke-width: 0.5pt;
   -webkit-text-stroke-color: #000;
+
   font-size: 30px;
 `;
 
 const UnknownCardWrapper = styled.div`
   position: relative;
-  margin-bottom: 28px;
-  width: 290px;
-  height: 434px;
   display: flex;
   justify-content: center;
+  width: 290px;
+  height: 434px;
+  margin-bottom: 28px;
 `;
 
 const AnimalNameText = styled.p`
   position: absolute;
   bottom: 160px;
+
   color: #898989;
   font-size: 24px;
   -webkit-text-stroke-width: 0.5pt;

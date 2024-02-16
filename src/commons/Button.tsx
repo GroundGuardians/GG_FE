@@ -26,6 +26,7 @@ const CommonButtonContainer = styled.button<{
   isSurvey: boolean;
 }>`
   display: flex;
+  gap: 14px;
   align-items: center;
   justify-content: center;
   width: ${({ isSurvey }) => (isSurvey ? "294px" : "auto")};

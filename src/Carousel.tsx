@@ -73,29 +73,32 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 export default EmblaCarousel;
 
 const CarouselLayout = styled.div`
+  box-sizing: border-box;
   width: 350px;
   height: 480px;
-  border-radius: 25px;
+  padding-right: 26px;
+  padding-left: 26px;
+
   background: #fff;
   border: 1px solid black;
-  padding-left: 26px;
-  padding-right: 26px;
-  box-sizing: border-box;
+  border-radius: 25px;
 `;
 
 const Title = styled.div`
+  height: 34px;
+  margin-top: 35px;
+
   color: #000;
+  font-size: 20px;
 
   -webkit-text-stroke-width: 0.5pt;
   -webkit-text-stroke-color: #000;
-  font-size: 20px;
-  margin-top: 35px;
-  height: 34px;
 `;
 
 const Description = styled.div`
-  font-size: 16px;
   height: 360px;
   overflow-y: scroll;
+
+  font-size: 16px;
   line-height: normal;
 `;

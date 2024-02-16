@@ -6,6 +6,7 @@ import Survey from "./pages/Survey";
 import App from "./App";
 import UnknownCard from "./pages/UnknownCard";
 import Info from "./pages/Info";
+import RedirectLogin from "./redirectLogin";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/info",
         element: <Info />,
+      },
+      {
+        path: "/api/auth/callback",
+        element: <RedirectLogin />,
       },
     ],
   },
