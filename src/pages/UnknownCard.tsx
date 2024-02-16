@@ -2,8 +2,26 @@ import styled from "@emotion/styled";
 import CardIc from "../assets/unknownCard.svg";
 import { CommonButton, ButtonRowWrapper } from "../commons/Button";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const UnknownCard = () => {
+  const [result, setResult] = useState<string>("ooxx");
+  useEffect(() => {
+    const fetchUnknownCardData = async () => {
+      try {
+        const response = await axios.get(
+          `http://3.38.77.109:8081/animal/${result}`
+        );
+        console.log(response, "res");
+        return response.data;
+      } catch (error) {
+        console.log("에러:", error);
+        throw error;
+      }
+    };
+    fetchUnknownCardData();
+  }, [result]);
   const navigate = useNavigate();
   return (
     <>
