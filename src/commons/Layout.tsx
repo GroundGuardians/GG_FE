@@ -1,23 +1,70 @@
 import styled from "@emotion/styled";
 import { CommonButton } from "./Button";
+import { useOutletContext } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface LayoutPropTypes {
   questionText: string;
   questionImage: string;
   buttonGreenText: string;
   buttonWhiteText: string;
+  id: number | undefined;
+  parsedSurveyId1: number | undefined;
+  setParsedSurveyId1: React.Dispatch<React.SetStateAction<number | undefined>>;
 }
 
 const Layout = (props: LayoutPropTypes) => {
+  const { surveyResult, setSurveyResult } = useOutletContext();
+  const navigate = useNavigate();
+  const {
+    questionText,
+    questionImage,
+    buttonGreenText,
+    buttonWhiteText,
+    id,
+    parsedSurveyId1,
+    setParsedSurveyId1,
+  } = props;
+
+  const handleAddSurveyResultO = () => {
+    setSurveyResult(surveyResult + "O");
+    console.log(surveyResult, "d");
+
+    if (parsedSurveyId1 !== undefined) {
+      const nextSurveyId = parsedSurveyId1 + 1;
+      setParsedSurveyId1(nextSurveyId);
+      if (nextSurveyId === 5) navigate(`../card/unknown`);
+      else navigate(`/survey/${nextSurveyId}`);
+    }
+  };
+  const handleAddSurveyResultX = () => {
+    setSurveyResult(surveyResult + "X");
+    console.log(surveyResult, "x");
+
+    if (parsedSurveyId1 !== undefined) {
+      const nextSurveyId = parsedSurveyId1 + 1;
+      setParsedSurveyId1(nextSurveyId);
+      if (nextSurveyId === 5) navigate(`../card/unknown`);
+      else navigate(`/survey/${nextSurveyId}`);
+    }
+  };
   return (
     <LayoutWrapper>
-      <QuestionText>{props.questionText}</QuestionText>
-      <QuestionImage src={props.questionImage} />
-      <CommonButton isGreen={true} isSurvey={true}>
-        {props.buttonGreenText}
+      <QuestionText>{questionText}</QuestionText>
+      <QuestionImage src={questionImage} />
+      <CommonButton
+        isGreen={true}
+        isSurvey={true}
+        onClick={handleAddSurveyResultO}
+      >
+        {buttonGreenText}
       </CommonButton>
-      <CommonButton isGreen={false} isSurvey={true}>
-        {props.buttonWhiteText}
+      <CommonButton
+        isGreen={false}
+        isSurvey={true}
+        onClick={handleAddSurveyResultX}
+      >
+        {buttonWhiteText}
       </CommonButton>
     </LayoutWrapper>
   );
