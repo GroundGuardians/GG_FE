@@ -7,6 +7,7 @@ import App from "./App";
 import UnknownCard from "./pages/UnknownCard";
 import Info from "./pages/Info";
 import RedirectLogin from "./redirectLogin";
+import GetCard from "./pages/GetCard";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/card/unknown",
         element: <UnknownCard />,
+      },
+      {
+        path: "/getcard",
+        element: <GetCard />,
       },
       {
         path: "/info",

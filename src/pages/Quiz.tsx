@@ -3,9 +3,11 @@ import { CommonButton } from "../commons/Button";
 import HintIcon from "../assets/hintIcon.svg";
 import { QUIZ_DATA } from "../constants/data";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const Quiz = () => {
   const [answer, setAnswer] = useState("");
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(true);
+  const navigate = useNavigate();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAnswer(event.target.value);
@@ -16,6 +18,8 @@ const Quiz = () => {
     answer == QUIZ_DATA.answer
       ? setIsAnswerCorrect(true)
       : setIsAnswerCorrect(false);
+
+    isAnswerCorrect && navigate("/getcard");
   };
 
   return (

@@ -6,13 +6,21 @@ import Info from "../pages/Info";
 const Header = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
+  const toggleModal = () => {
+    setModalOpen(!modalOpen);
+  };
+
   return (
     <>
       <HeaderWrapper>
         GroundGuardians
-        <InfoIcon src={InfoIc} onClick={() => setModalOpen(!modalOpen)} />
+        <InfoIcon src={InfoIc} onClick={toggleModal} />
       </HeaderWrapper>
-      <ModalWrapper>{modalOpen && <Info />}</ModalWrapper>
+      {modalOpen && (
+        <ModalBackdrop onClick={toggleModal}>
+          <Info />
+        </ModalBackdrop>
+      )}
     </>
   );
 };
@@ -37,11 +45,17 @@ const HeaderWrapper = styled.div`
 const InfoIcon = styled.img`
   position: absolute;
   right: 30px;
+
+  cursor: pointer; /* 마우스를 가져다 대면 포인터 모양이 됨 */
 `;
 
-const ModalWrapper = styled.div`
-  position: absolute;
-  top: 50px;
+const ModalBackdrop = styled.div`
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  /* 임의로 */
+  background-color: rgb(0 0 0 / 50%); /* 어두운 배경 */
 `;
