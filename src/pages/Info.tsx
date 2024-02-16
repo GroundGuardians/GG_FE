@@ -19,7 +19,13 @@ const Info = () => {
 export default Info;
 
 const InfoWrapper = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transform: translate(-50%, -50%);
 `;
