@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { CommonButton } from "./Button";
 import { useOutletContext } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface LayoutPropTypes {
   questionText: string;
@@ -14,6 +15,7 @@ interface LayoutPropTypes {
 
 const Layout = (props: LayoutPropTypes) => {
   const { surveyResult, setSurveyResult } = useOutletContext();
+  const navigate = useNavigate();
   const {
     questionText,
     questionImage,
@@ -27,10 +29,24 @@ const Layout = (props: LayoutPropTypes) => {
   const handleAddSurveyResultO = () => {
     setSurveyResult([...surveyResult, "O"]);
     console.log(surveyResult, "d");
+
+    if (parsedSurveyId1 !== undefined) {
+      const nextSurveyId = parsedSurveyId1 + 1;
+      setParsedSurveyId1(nextSurveyId);
+      if (nextSurveyId === 5) navigate(`../card/unknown`);
+      else navigate(`/survey/${nextSurveyId}`);
+    }
   };
   const handleAddSurveyResultX = () => {
     setSurveyResult([...surveyResult, "X"]);
     console.log(surveyResult, "x");
+
+    if (parsedSurveyId1 !== undefined) {
+      const nextSurveyId = parsedSurveyId1 + 1;
+      setParsedSurveyId1(nextSurveyId);
+      if (nextSurveyId === 5) navigate(`../card/unknown`);
+      else navigate(`/survey/${nextSurveyId}`);
+    }
   };
   return (
     <LayoutWrapper>
