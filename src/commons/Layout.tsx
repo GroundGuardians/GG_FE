@@ -14,14 +14,19 @@ interface LayoutPropTypes {
 }
 
 const Layout = (props: LayoutPropTypes) => {
-  const { surveyResult, setSurveyResult } = useOutletContext();
+  interface OutletContext {
+    surveyResult: string;
+    setSurveyResult: (result: string) => void;
+  }
+
+  const { surveyResult, setSurveyResult } = useOutletContext() as OutletContext;
+
   const navigate = useNavigate();
   const {
     questionText,
     questionImage,
     buttonGreenText,
     buttonWhiteText,
-    id,
     parsedSurveyId1,
     setParsedSurveyId1,
   } = props;

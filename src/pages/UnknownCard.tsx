@@ -6,8 +6,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const UnknownCard = () => {
-  const [result, setResult] = useState<string>("ooxx");
+  const [result, setResult] = useState<string>("");
   useEffect(() => {
+    setResult("ooxx");
     const fetchUnknownCardData = async () => {
       try {
         const response = await axios.get(
