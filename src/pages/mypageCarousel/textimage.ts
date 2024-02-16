@@ -1,7 +1,7 @@
-import image1 from "../../assets/거북이카드.png";
-import image2 from "../../assets/고릴라카드.png";
-import image3 from "../../assets/날다람쥐카드.png";
-import image4 from "../../assets/레서판다카드.png";
+import image1 from "../../assets/turtle.png";
+import image2 from "../../assets/gorilla.png";
+import image3 from "../../assets/daramzi.png";
+import image4 from "../../assets/panda.png";
 
 export const images: string[] = [image1, image2, image3, image4];
 
