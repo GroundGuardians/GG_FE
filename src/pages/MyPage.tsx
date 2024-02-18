@@ -11,8 +11,6 @@ import "./mypageCarousel/embla.css";
 import "./mypageCarousel/sandbox.css";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
-const SLIDE_COUNT = 5;
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 const MyPage = () => {
   interface myDataPropType {
@@ -54,6 +52,9 @@ const MyPage = () => {
   const imageArray = myData?.cardImage.map((imageBase64, index) => {
     return `data:image/png;base64,${imageBase64}`;
   });
+
+  const SLIDE_COUNT = 5;
+  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
   console.log(imageArray, "ff");
 

@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { flushSync } from "react-dom";
-
 import image1 from "../../assets/turtle.png";
 import image2 from "../../assets/gorilla.png";
 import image3 from "../../assets/daramzi.png";
@@ -26,6 +25,7 @@ const MyPageCarousel: React.FC<PropType> = (props) => {
 
   // image가 undefined이 아닌지 확인하여 할당합니다.
   const images: string[] = image ? image : [];
+  // const images: string[] = [image1, image2, image3, image4];
 
   const imageByIndex = (index: number): string => images[index % images.length];
 
