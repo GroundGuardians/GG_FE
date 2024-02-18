@@ -2,9 +2,46 @@ import styled from "@emotion/styled";
 import CardIc from "../assets/unknownCard.svg";
 import { CommonButton, ButtonRowWrapper } from "../commons/Button";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const GetCard = () => {
   const navigate = useNavigate();
+  const token = localStorage.getItem("jwtToken");
+  const [imageSrc, setImageSrc] = useState("");
+
+  console.log(token);
+
+  useEffect(() => {
+    const handleFetchQuizData = async () => {
+      try {
+        const response = await axios.post(
+          `http://3.38.77.109:8081/mypage/8`,
+          {},
+
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            responseType: "arraybuffer",
+          }
+        );
+        const blob = new Blob([response.data], { type: "image/png" });
+        const imageUrl = URL.createObjectURL(blob);
+        setImageSrc(imageUrl);
+        console.log(response, "res");
+
+        console.log(token, "token");
+
+        return response.data;
+      } catch (error) {
+        console.log(token, "token");
+        console.log("에러:", error);
+        throw error;
+      }
+    };
+    handleFetchQuizData();
+  }, []);
   return (
     <>
       <Title>
@@ -13,8 +50,7 @@ const GetCard = () => {
         into an animal...
       </Title>
       <UnknownCardWrapper>
-        <img src={CardIc} />
-        <AnimalNameText>Pouch Voyager</AnimalNameText>
+        <img src={imageSrc} />
       </UnknownCardWrapper>
       <ButtonRowWrapper>
         <CommonButton
