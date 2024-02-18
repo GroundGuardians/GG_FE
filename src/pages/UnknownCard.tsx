@@ -4,26 +4,41 @@ import { CommonButton, ButtonRowWrapper } from "../commons/Button";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 const UnknownCard = () => {
-  const [result, setResult] = useState<string>("");
+  interface OutletContext {
+    surveyResult: string;
+  }
+  interface AnimalDataPropType {
+    id: number;
+    name: string;
+  }
+
+  const { surveyResult } = useOutletContext() as OutletContext;
+
+  const [animalData, setAnimalData] = useState<AnimalDataPropType>();
+
   useEffect(() => {
-    setResult("ooxx");
     const fetchUnknownCardData = async () => {
       try {
         const response = await axios.get(
-          `http://3.38.77.109:8081/animal/${result}`
+          `http://3.38.77.109:8081/animal/${surveyResult}`
         );
-        console.log(response, "res");
+        console.log(surveyResult, "Df");
+        console.log(response.data, "res");
+        setAnimalData(response.data);
         return response.data;
       } catch (error) {
+        console.log(surveyResult, "Df");
         console.log("에러:", error);
         throw error;
       }
     };
     fetchUnknownCardData();
-  }, [result]);
+  }, [surveyResult]);
   const navigate = useNavigate();
+
   return (
     <>
       <Title>
@@ -33,20 +48,24 @@ const UnknownCard = () => {
       </Title>
       <UnknownCardWrapper>
         <img src={CardIc} />
-        <AnimalNameText>Pouch Voyager</AnimalNameText>
+        <AnimalNameText>{animalData?.name}</AnimalNameText>
       </UnknownCardWrapper>
       <ButtonRowWrapper>
         <CommonButton
           isGreen={false}
           isSurvey={false}
-          onClick={() => navigate("/")}
+          onClick={() => {
+            navigate("/");
+          }}
         >
           Home
         </CommonButton>
         <CommonButton
           isGreen={true}
           isSurvey={false}
-          onClick={() => navigate("/quiz")}
+          onClick={() => {
+            navigate(`/quiz/${animalData?.id}`);
+          }}
         >
           Get a Card
         </CommonButton>

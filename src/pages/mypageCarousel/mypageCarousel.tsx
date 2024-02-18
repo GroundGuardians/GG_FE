@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { flushSync } from "react-dom";
-import imageByIndex from "./textimage";
 
 const TWEEN_FACTOR = 4.2;
 
@@ -12,12 +11,19 @@ const numberWithinRange = (number: number, min: number, max: number): number =>
 type PropType = {
   slides: number[];
   options?: EmblaOptionsType;
+  image: string[] | undefined;
 };
 
 const MyPageCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
+  const { slides, options, image } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [tweenValues, setTweenValues] = useState<number[]>([]);
+
+  // image가 undefined이 아닌지 확인하여 할당합니다.
+  const images: string[] = image ? image : [];
+  // const images: string[] = [image1, image2, image3, image4];
+
+  const imageByIndex = (index: number): string => images[index % images.length];
 
   const onScroll = useCallback(() => {
     if (!emblaApi) return;

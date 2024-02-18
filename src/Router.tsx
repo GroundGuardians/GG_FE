@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         element: <Survey />,
       },
       {
-        path: "/quiz",
+        path: "/quiz/:animalId",
         element: <Quiz />,
       },
       {
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         element: <UnknownCard />,
       },
       {
-        path: "/getcard",
+        path: "/getcard/:animalId",
         element: <GetCard />,
       },
       {
