@@ -14,10 +14,16 @@ const UnknownCard = () => {
     id: number;
     name: string;
   }
+  interface QuizDataPropType {
+    question: string;
+    answer: string;
+    url: string;
+  }
 
   const { surveyResult } = useOutletContext() as OutletContext;
 
   const [animalData, setAnimalData] = useState<AnimalDataPropType>();
+  const [quizData, setQuizData] = useState<QuizDataPropType>();
   useEffect(() => {
     const fetchUnknownCardData = async () => {
       try {
@@ -37,6 +43,21 @@ const UnknownCard = () => {
     fetchUnknownCardData();
   }, [surveyResult]);
   const navigate = useNavigate();
+
+  const handleFetchQuizData = async () => {
+    try {
+      const response = await axios.get(
+        `http://3.38.77.109:8081/quiz/${animalData?.id}`
+      );
+      console.log(response.data, "res");
+      setQuizData(response.data);
+      return response.data;
+    } catch (error) {
+      console.log(surveyResult, "Df");
+      console.log("에러:", error);
+      throw error;
+    }
+  };
   return (
     <>
       <Title>
@@ -52,14 +73,19 @@ const UnknownCard = () => {
         <CommonButton
           isGreen={false}
           isSurvey={false}
-          onClick={() => navigate("/")}
+          onClick={() => {
+            navigate("/");
+          }}
         >
           Home
         </CommonButton>
         <CommonButton
           isGreen={true}
           isSurvey={false}
-          onClick={() => navigate("/quiz")}
+          onClick={() => {
+            handleFetchQuizData();
+            navigate("/quiz");
+          }}
         >
           Get a Card
         </CommonButton>
