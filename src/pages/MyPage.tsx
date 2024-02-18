@@ -75,9 +75,9 @@ const MyPage = () => {
         <CommonButton
           isGreen={false}
           isSurvey={false}
-          onClick={() => navigate("/mypage")}
+          onClick={() => navigate("/")}
         >
-          My Page
+          Home
         </CommonButton>
         <CommonButton
           isGreen={true}
