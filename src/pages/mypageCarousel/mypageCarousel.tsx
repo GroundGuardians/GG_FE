@@ -16,14 +16,16 @@ const numberWithinRange = (number: number, min: number, max: number): number =>
 type PropType = {
   slides: number[];
   options?: EmblaOptionsType;
+  image: string[] | undefined;
 };
 
 const MyPageCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
+  const { slides, options, image } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [tweenValues, setTweenValues] = useState<number[]>([]);
 
-  const images: string[] = [image1, image2, image3, image4];
+  // image가 undefined이 아닌지 확인하여 할당합니다.
+  const images: string[] = image ? image : [];
 
   const imageByIndex = (index: number): string => images[index % images.length];
 

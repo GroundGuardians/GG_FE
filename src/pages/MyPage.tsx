@@ -18,7 +18,7 @@ const MyPage = () => {
   interface myDataPropType {
     name: string;
     email: string;
-    cardImage: Array<ArrayBuffer>;
+    cardImage: string[];
   }
   const navigate = useNavigate();
   const token = localStorage.getItem("jwtToken");
@@ -51,13 +51,23 @@ const MyPage = () => {
     handleFetchQuizData();
   }, []);
 
+  const imageArray = myData?.cardImage.map((imageBase64, index) => {
+    return `data:image/png;base64,${imageBase64}`;
+  });
+
+  console.log(imageArray, "ff");
+
   return (
     <>
       <Username>Hello! {myData?.name}</Username>
       <Email>{myData?.email}</Email>
       <main className="sandbox">
         <section className="sandbox__carousel mypage">
-          <MyPageCarousel slides={SLIDES} options={OPTIONS} />
+          <MyPageCarousel
+            slides={SLIDES}
+            options={OPTIONS}
+            image={imageArray}
+          />
         </section>
       </main>
       <ButtonRowWrapper>
@@ -76,6 +86,17 @@ const MyPage = () => {
           Try Again
         </CommonButton>
       </ButtonRowWrapper>
+      {/* {myData?.cardImage && (
+        <div>
+          {myData.cardImage.map((imageBase64, index) => (
+            <img
+              key={index}
+              src={`data:image/png;base64,${imageBase64}`}
+              alt={`Image ${index + 1}`}
+            />
+          ))}
+        </div>
+      )} */}
     </>
   );
 };
