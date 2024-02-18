@@ -3,15 +3,21 @@ import CardIc from "../assets/unknownCard.svg";
 import { CommonButton, ButtonRowWrapper } from "../commons/Button";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 
 const UnknownCard = () => {
   interface OutletContext {
     surveyResult: string;
   }
+  interface AnimalDataPropType {
+    id: number;
+    name: string;
+  }
 
   const { surveyResult } = useOutletContext() as OutletContext;
+
+  const [animalData, setAnimalData] = useState<AnimalDataPropType>();
   useEffect(() => {
     const fetchUnknownCardData = async () => {
       try {
@@ -19,7 +25,8 @@ const UnknownCard = () => {
           `http://3.38.77.109:8081/animal/${surveyResult}`
         );
         console.log(surveyResult, "Df");
-        console.log(response, "res");
+        console.log(response.data, "res");
+        setAnimalData(response.data);
         return response.data;
       } catch (error) {
         console.log(surveyResult, "Df");
@@ -39,7 +46,7 @@ const UnknownCard = () => {
       </Title>
       <UnknownCardWrapper>
         <img src={CardIc} />
-        <AnimalNameText>Pouch Voyager</AnimalNameText>
+        <AnimalNameText>{animalData?.name}</AnimalNameText>
       </UnknownCardWrapper>
       <ButtonRowWrapper>
         <CommonButton
