@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 import { CommonButton } from "../commons/Button";
 import HintIcon from "../assets/hintIcon.svg";
-import { QUIZ_DATA } from "../constants/data";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+
 const Quiz = () => {
   const [answer, setAnswer] = useState("");
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(true);
@@ -11,21 +13,50 @@ const Quiz = () => {
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAnswer(event.target.value);
-    setIsAnswerCorrect(true);
   };
 
   const handleCompareAnswer = () => {
-    answer == QUIZ_DATA.answer
-      ? setIsAnswerCorrect(true)
-      : setIsAnswerCorrect(false);
+    const isCorrect = answer === quizData?.answer;
+    setIsAnswerCorrect(isCorrect);
 
-    isAnswerCorrect && navigate("/getcard");
+    if (isCorrect) {
+      navigate("/getcard");
+    } else {
+      console.log("The answer is incorrect! Try again.");
+    }
   };
+
+  const { animalId } = useParams();
+
+  interface QuizDataPropType {
+    question: string;
+    answer: string;
+    url: string;
+  }
+
+  useEffect(() => {
+    const handleFetchQuizData = async () => {
+      try {
+        const response = await axios.get(
+          `http://3.38.77.109:8081/quiz/${animalId}`
+        );
+        console.log(response.data, "res");
+        setQuizData(response.data);
+        return response.data;
+      } catch (error) {
+        console.log("에러:", error);
+        throw error;
+      }
+    };
+    handleFetchQuizData();
+  }, []);
+
+  const [quizData, setQuizData] = useState<QuizDataPropType>();
 
   return (
     <>
       <Title>pop quiz!</Title>
-      <QuizQuestion>{QUIZ_DATA.question}</QuizQuestion>
+      <QuizQuestion>{quizData?.question}</QuizQuestion>
       <QuizAnswerWrapper>
         <QuizAnswerMark>A.</QuizAnswerMark>
         <QuizAnswerInputBorder>
@@ -42,7 +73,7 @@ const Quiz = () => {
       </QuizAnswerWrapper>
       <ButtonWrapper>
         <CommonButton isGreen={true} isSurvey={false}>
-          <a href={QUIZ_DATA.url}>
+          <a href={quizData?.url}>
             <img src={HintIcon} /> Hint
           </a>
         </CommonButton>
