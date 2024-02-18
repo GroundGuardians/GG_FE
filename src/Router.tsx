@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         element: <UnknownCard />,
       },
       {
-        path: "/getcard",
+        path: "/getcard/:animalId",
         element: <GetCard />,
       },
       {

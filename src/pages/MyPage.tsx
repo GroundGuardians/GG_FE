@@ -53,7 +53,7 @@ const MyPage = () => {
     return `data:image/png;base64,${imageBase64}`;
   });
 
-  const SLIDE_COUNT = 5;
+  const SLIDE_COUNT = imageArray && imageArray?.length + 1;
   const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
   console.log(imageArray, "ff");

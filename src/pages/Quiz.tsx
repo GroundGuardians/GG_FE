@@ -15,18 +15,18 @@ const Quiz = () => {
     setAnswer(event.target.value);
   };
 
+  const { animalId } = useParams();
+
   const handleCompareAnswer = () => {
     const isCorrect = answer === quizData?.answer;
     setIsAnswerCorrect(isCorrect);
 
     if (isCorrect) {
-      navigate("/getcard");
+      navigate(`/getcard/${animalId}`);
     } else {
       console.log("The answer is incorrect! Try again.");
     }
   };
-
-  const { animalId } = useParams();
 
   interface QuizDataPropType {
     question: string;
