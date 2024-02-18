@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import CardIc from "../assets/unknownCard.svg";
+
 import { CommonButton, ButtonRowWrapper } from "../commons/Button";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -93,14 +93,4 @@ const UnknownCardWrapper = styled.div`
   width: 290px;
   height: 434px;
   margin-bottom: 28px;
-`;
-
-const AnimalNameText = styled.p`
-  position: absolute;
-  bottom: 160px;
-
-  color: #898989;
-  font-size: 24px;
-  -webkit-text-stroke-width: 0.5pt;
-  -webkit-text-stroke-color: #898989;
 `;

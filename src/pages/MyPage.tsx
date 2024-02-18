@@ -50,6 +50,7 @@ const MyPage = () => {
   }, []);
 
   const imageArray = myData?.cardImage.map((imageBase64, index) => {
+    console.log(index, "빌드용");
     return `data:image/png;base64,${imageBase64}`;
   });
 
