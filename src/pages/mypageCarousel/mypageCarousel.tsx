@@ -2,7 +2,11 @@ import React, { useCallback, useEffect, useState } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { flushSync } from "react-dom";
-import imageByIndex from "./textimage";
+
+import image1 from "../../assets/turtle.png";
+import image2 from "../../assets/gorilla.png";
+import image3 from "../../assets/daramzi.png";
+import image4 from "../../assets/panda.png";
 
 const TWEEN_FACTOR = 4.2;
 
@@ -18,6 +22,10 @@ const MyPageCarousel: React.FC<PropType> = (props) => {
   const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [tweenValues, setTweenValues] = useState<number[]>([]);
+
+  const images: string[] = [image1, image2, image3, image4];
+
+  const imageByIndex = (index: number): string => images[index % images.length];
 
   const onScroll = useCallback(() => {
     if (!emblaApi) return;
