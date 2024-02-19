@@ -1,9 +1,9 @@
 # Ground Guarians
-<p align="center"><img src="https://github.com/GroundGuardians/GG_FE/assets/99591750/7e2c1915-467c-4d6b-a035-ea1d8ac043e8" width="200" height="200"/></p>
 -----
+<p align="center"><img src="https://github.com/GroundGuardians/GG_FE/assets/99591750/7e2c1915-467c-4d6b-a035-ea1d8ac043e8" width="500" height="500"/></p>
 
-
-
+<br>
+<br>
 
 ## Description
 -----
@@ -12,7 +12,7 @@
 <br/>
 <br/>
 
-#### 🔗 Deployment
+#### 🔗 Deployment Link
 https://ground-guardians.vercel.app
 
 <br/>
@@ -21,12 +21,9 @@ https://ground-guardians.vercel.app
 ## Team OnePeace
 -----
 |<img src="https://avatars.githubusercontent.com/u/93575538?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/89023026?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/99591750?v=4" width="150" height="150"/>|<img src="" width="150" height="150"/>|
-|:-:|:-:|:-:|:-:|
 |Dahyun Moon<br/>[@moondda](https://github.com/moondda)|Sumin Shin<br/>[@suminnnnn](https://github.com/suminnnnn)|Munyeong Jung<br/>[@munyeong0103](https://github.com/munyeong0103)|Eunbi Hwang<br/>[@]()|
-|:-:|:-:|:-:|:-:|
 |FE developer|BE developer|Be developer|Designer|
-|:-:|:-:|:-:|:-:|
-|??.ajou.ac.kr|??.ajou.ac.kr|skymy02@ajou.ac.kr|
+|??.ajou.ac.kr|??.ajou.ac.kr|skymy02@ajou.ac.kr|??.ajou.ac.kr|
 
 <br/>
 <br/>
