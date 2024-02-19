@@ -73,7 +73,7 @@ const Quiz = () => {
       </QuizAnswerWrapper>
       <ButtonWrapper>
         <CommonButton isGreen={true} isSurvey={false}>
-          <a href={quizData?.url}>
+          <a href={quizData?.url} target="_blank">
             <img src={HintIcon} /> Hint
           </a>
         </CommonButton>
