@@ -1,5 +1,5 @@
 # Ground Guarians
-<p align="center"><img src="https://github.com/GroundGuardians/GG_FE/assets/99591750/7e2c1915-467c-4d6b-a035-ea1d8ac043e8" width="350" height="350"/></p>
+<img src="https://github.com/GroundGuardians/GG_FE/assets/99591750/7e2c1915-467c-4d6b-a035-ea1d8ac043e8" width="350" height="350"/></p>
 
 <br>
 <br>
@@ -10,7 +10,7 @@
 <br/>
 <br/>
 
-#### 🔗 Deployment Link
+#### Deployment Link
 https://ground-guardians.vercel.app
 
 <br/>
